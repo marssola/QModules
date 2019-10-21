@@ -1,0 +1,3 @@
+module UiKit
+singleton UiKit 1.0 UiKit.qml
+ 

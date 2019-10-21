@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/components">
+        <file>AutocompleteField.qml</file>
+        <file>GroupItems.qml</file>
+        <file>NotificationMessage.qml</file>
+        <file>OptionDelegate.qml</file>
+        <file>SearchField.qml</file>
+        <file>StackView.qml</file>
+        <file>NavigationPage.qml</file>
+        <file>Tag.qml</file>
+        <file>ItemControl.qml</file>
+        <file>ItemBorder.qml</file>
+    </qresource>
+</RCC>

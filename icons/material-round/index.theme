@@ -1,0 +1,9 @@
+[Icon Theme]
+Name=Material
+Comment=Icons Material Round
+
+Directories=svg
+
+[svg]
+Size=24
+Type=Scalable

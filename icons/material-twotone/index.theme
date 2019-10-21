@@ -1,0 +1,9 @@
+[Icon Theme]
+Name=Material
+Comment=Icons Material Two Tone
+
+Directories=svg
+
+[svg]
+Size=24
+Type=Scalable

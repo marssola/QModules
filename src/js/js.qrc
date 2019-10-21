@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/js">
+        <file>Database.js</file>
+        <file>ListSQLiteModel.qml</file>
+    </qresource>
+</RCC>
