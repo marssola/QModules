@@ -36,15 +36,6 @@ T.GroupBox {
         width: parent.width
     }
 
-    Component {
-        id: row
-
-        Rectangle {
-            width: parent.width
-            height: 1
-        }
-    }
-
     background: Rectangle {
         y: control.topPadding
         width: parent.width

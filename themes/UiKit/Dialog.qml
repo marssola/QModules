@@ -44,6 +44,8 @@ T.Dialog {
     id: control
 
     property var applicationwindow: ApplicationWindow
+    property alias shaderSourceItem: shader.sourceItem
+
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                             header && header.visible ? header.implicitWidth : 0,
                             footer && footer.visible ? footer.implicitWidth : 0,
@@ -64,7 +66,7 @@ T.Dialog {
 
     background: Rectangle {
         color: UiKit.popup_background
-        border.color: UiKit.border_color
+//        border.color: UiKit.border_color
         radius: control.modal ? UiKit.radius_popup : UiKit.radius
 
         FastBlur {
@@ -89,6 +91,7 @@ T.Dialog {
 
             property int header_height: control.applicationwindow.header && control.applicationwindow.header.height ? control.applicationwindow.header.height : 0
             source: ShaderEffectSource {
+                id: shader
                 anchors.fill: parent
                 sourceItem: control.applicationwindow.contentItem
                 sourceRect: Qt.rect(control.x, control.y - fastBlur.header_height, control.background.width, control.background.height)

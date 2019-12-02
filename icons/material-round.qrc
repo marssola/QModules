@@ -1044,5 +1044,7 @@
         <file>material-round/svg/zoom-out-map.svg</file>
         <file>material-round/svg/zoom-out.svg</file>
         <file>material-round/index.theme</file>
+        <file>material-round/svg/hide-password.svg</file>
+        <file>material-round/svg/show-password.svg</file>
     </qresource>
 </RCC>

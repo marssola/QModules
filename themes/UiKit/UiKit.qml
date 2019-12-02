@@ -7,17 +7,17 @@ ApplicationWindow {
     id: uikit
 
     default property bool dark: false
-    property string accent
+    property string accent: 'blue'
 
     readonly property color white: "#ffffff"
     readonly property color black: "#000000"
-    readonly property color extra_light_gray: "#efeff4"
-    readonly property color light_gray: "#e5e5ea"
+    readonly property color extra_light_gray: "#f9f9f9"
+    readonly property color light_gray: "#e8e8ea"
     readonly property color light_mid_gray: "#d1d1d6"
     readonly property color mid_gray: "#c7c7cc"
     readonly property color gray: "#707074" // "#8e8e93"
-    readonly property color dark_mid_gray: "#313136"
-    readonly property color darker_gray: "#1c1c1c"
+    readonly property color dark_mid_gray: "#39383d"
+    readonly property color darker_gray: "#080808"
     readonly property color dark_gray: "#202020"
     readonly property color lighter_gray: "#f8f8f8"
 
@@ -32,20 +32,20 @@ ApplicationWindow {
 
     readonly property color border_color: dark ? dark_mid_gray : mid_gray
     readonly property color component_border_color: dark ? gray : mid_gray
-    readonly property color border_lighter_color: dark ? dark_gray : light_gray
-    readonly property color header_background: dark ? dark_gray : lighter_gray
-    readonly property color popup_background: dark ? dark_gray : lighter_gray
+    readonly property color border_lighter_color: mid_gray //dark ? dark_gray : light_gray
+    readonly property color header_background: dark ? black : white
+    readonly property color popup_background: dark ? darker_gray : lighter_gray
     readonly property color component_focus: dark ? dark_mid_gray : light_mid_gray
 
     readonly property int implicitHeight: 32
     readonly property int radius: implicitHeight * 0.20
     readonly property int radius_popup: 15
 
-    palette.window: dark ? darker_gray : extra_light_gray
-    palette.windowText: gray //dark ? light_gray : dark_gray
-    palette.base: dark ? dark_gray : white
+    palette.window: dark ? black : white
+    palette.windowText: dark ? extra_light_gray : dark_gray
+    palette.base: dark ? dark_gray : extra_light_gray
     palette.text: dark ? extra_light_gray : dark_gray
-    palette.alternateBase: dark ? dark_mid_gray : light_mid_gray
+    palette.alternateBase: dark ? dark_mid_gray : light_gray
     palette.brightText: dark ? white : black
     palette.shadow: black
     palette.button: accent ? uikit[accent] : dark ? orange : blue
@@ -53,7 +53,7 @@ ApplicationWindow {
     palette.mid: accent ? Qt.darker(uikit[accent], 1.25) : Qt.darker(dark ? orange : blue, 1.25)
     palette.light: accent ? Qt.lighter(uikit[accent], 1.5) : Qt.lighter(dark ? orange : blue, 1.5)
     palette.midlight: accent ? Qt.lighter(uikit[accent], 1.25) : Qt.lighter(dark ? orange : blue, 1.25)
-    palette.buttonText: dark ? extra_light_gray : dark_gray
+    palette.buttonText: dark ? mid_gray : dark_mid_gray
     palette.highlight: accent ? uikit[accent] : dark ? orange : blue
     palette.highlightedText: white
     palette.link: purple

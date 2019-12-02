@@ -4,7 +4,7 @@ import QtQuick.Controls 2.5
 Page {
     id: page
 
-    property var content
+    property var content: Item {}
     property alias pane: pane
 
     signal moveStarted()
@@ -28,6 +28,7 @@ Page {
             padding: 0
 
             contentItem: page.content
+            background: Rectangle { color: "transparent" }
         }
 
         ScrollIndicator.vertical: ScrollIndicator {}

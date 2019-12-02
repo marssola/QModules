@@ -10,5 +10,8 @@
         <file>Tag.qml</file>
         <file>ItemControl.qml</file>
         <file>ItemBorder.qml</file>
+        <file>FooterBar.qml</file>
+        <file>HeaderBar.qml</file>
+        <file>PasswordValidate.qml</file>
     </qresource>
 </RCC>

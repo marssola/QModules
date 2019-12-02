@@ -45,17 +45,52 @@ T.BusyIndicator {
     implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
     implicitHeight: contentItem.implicitHeight + topPadding + bottomPadding
 
-    padding: 6
+    padding: 2
+    contentItem: Item {
+        id: item
+        implicitWidth: 32
+        implicitHeight: 32
 
-    contentItem: BusyIndicatorImpl {
-        implicitWidth: 48
-        implicitHeight: 48
-
-        pen: control.palette.dark
-        fill: control.palette.dark
-
-        running: control.running
         opacity: control.running ? 1 : 0
-        Behavior on opacity { OpacityAnimator { duration: 250 } }
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: 250
+            }
+        }
+
+        RotationAnimator {
+            target: item
+            running: control.visible && control.running
+            from: 0
+            to: 360
+            loops: Animation.Infinite
+            duration: 1000
+        }
+
+        Repeater {
+            id: repeater
+            model: 8
+
+            Rectangle {
+                x: item.width / 2 - width / 2
+                y: item.height / 2 - height / 2
+                implicitWidth: 2
+                implicitHeight: 10
+                color: control.palette.windowText
+                radius: 5
+
+                transform: [
+                    Translate {
+                        y: -10
+                    },
+                    Rotation {
+                        angle: index / repeater.count * 360
+                        origin.x: 1
+                        origin.y: 5
+                    }
+                ]
+            }
+        }
     }
 }

@@ -2,5 +2,6 @@
     <qresource prefix="/js">
         <file>Database.js</file>
         <file>ListSQLiteModel.qml</file>
+        <file>XMLHttpRequestModel.qml</file>
     </qresource>
 </RCC>

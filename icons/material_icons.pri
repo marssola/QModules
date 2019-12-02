@@ -1,3 +1,4 @@
+QT += svg
 INCLUDEPATH += $$PWD
 
 RESOURCES += \

@@ -4,6 +4,8 @@ import QtQuick.Controls.impl 2.12
 import QtQuick.Templates 2.12 as T
 import QtQuick.Layouts 1.12
 
+import UiKit 1.0
+
 Control {
     id: root
 
@@ -11,11 +13,16 @@ Control {
     implicitHeight: row.implicitHeight
 
     property var value
-    property alias label: iconLabel.text
+    property string label
     property string placeholderText
-    property alias icon: iconLabel.icon
+    property string icon
+    property bool showIcon: true
+    property bool showBorder: true
+    property int columnLabelWidth: 130
     property int columnControlHeight
     property var control
+    property string inputMask
+    property int echoMode: TextField.Normal
 
     enum Item {
         TextField,
@@ -27,15 +34,27 @@ Control {
         id: row
         anchors.fill: parent
 
-        IconLabel {
-            id: iconLabel
-            icon.color: palette.text
-            icon.width: 24
-            color: palette.text
-            display: root.icon.name ? IconLabel.IconOnly : IconLabel.TextOnly
-            Layout.topMargin: 10
-            Layout.leftMargin: 10
+        RowLayout {
+            visible: root.showIcon
+            Layout.fillHeight: true
+            Layout.maximumWidth: root.columnLabelWidth
             Layout.alignment: Qt.AlignTop
+            Layout.topMargin: 15
+            Layout.leftMargin: 10
+
+            IconLabel {
+                Layout.preferredWidth: 30
+                display: IconLabel.IconOnly
+                icon.name: root.icon
+                icon.color: palette.text
+            }
+
+            Label {
+                Layout.fillWidth: true
+                Layout.leftMargin: 5
+                text: root.label
+                elide: Label.ElideRight
+            }
         }
 
         Item {
@@ -46,8 +65,19 @@ Control {
                id: loaderControl
                width: parent.width
                height: parent.height
+
            }
         }
+    }
+    Rectangle {
+        visible: showBorder
+        width: parent.width
+        height: 1
+        color: UiKit.border_color
+
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.leftMargin: root.showIcon ? 50 : 0
     }
 
     Component {
@@ -59,6 +89,9 @@ Control {
             onTextChanged: root.value = text
             placeholderText: root.placeholderText
             verticalAlignment: TextInput.AlignVCenter
+
+            inputMask: root.inputMask
+            echoMode: root.echoMode
 
             padding: 6
 

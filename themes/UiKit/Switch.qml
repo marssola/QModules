@@ -68,7 +68,7 @@ T.Switch {
         leftPadding: 0
         rightPadding: 0
         padding: height * 0.05
-        color: control.checked ? UiKit.green : control.palette.base
+        color: control.checked ? UiKit.green : UiKit.component_border_color
         border.width: 1
         border.color: control.checked ? UiKit.green : UiKit.component_border_color
 
@@ -79,8 +79,8 @@ T.Switch {
             height: width
             radius: width / 2
             color: UiKit.white
-            border.width: 0.8
-            border.color: control.checked ? UiKit.component_border_color : UiKit.border_lighter_color
+//            border.width: 0.8
+//            border.color: control.checked ? UiKit.component_border_color : UiKit.border_lighter_color
 
             Behavior on x {
                 enabled: !control.down

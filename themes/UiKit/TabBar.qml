@@ -64,6 +64,8 @@ T.TabBar {
     }
 
     background: Rectangle {
-        color: control.palette.window
+        implicitHeight: UiKit.implicitHeight
+        opacity: 0.80
+        color: UiKit.header_background
     }
 }
